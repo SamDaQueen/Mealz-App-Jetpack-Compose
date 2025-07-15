@@ -26,6 +26,8 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MealsCategoriesScreen() {
     val viewModel: MealsCategoriesViewModel = viewModel()
+    val meals =
+        viewModel.getMeals() // Bad practice - will call each time the composable is recomposed
     Text(
         text = "Hello there!"
     )
