@@ -1,9 +1,8 @@
 package com.standex.mealzapp.data.api
 
-import com.standex.mealzapp.data.repository.MealsCategoriesResponse
+import com.standex.mealzapp.data.model.MealsCategoriesResponse
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.GET
 
 class MealsWebService {
 
@@ -20,10 +19,5 @@ class MealsWebService {
 
     suspend fun getMeals(): MealsCategoriesResponse {
         return apiService.getMeals()
-    }
-
-    interface MealsApiService {
-        @GET("categories.php")
-        suspend fun getMeals(): MealsCategoriesResponse
     }
 }

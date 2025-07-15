@@ -4,13 +4,14 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.standex.mealzapp.data.repository.Meal
-import com.standex.mealzapp.domain.model.MealsModel
+import com.standex.mealzapp.data.model.Meal
+import com.standex.mealzapp.data.repository.MealsRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 // Presentation Logic
-class MealsCategoriesViewModel(private val model: MealsModel = MealsModel()) : ViewModel() {
+class MealsCategoriesViewModel(private val model: MealsRepository = MealsRepository()) :
+    ViewModel() {
 
     val mealsState: MutableState<List<Meal>> = mutableStateOf(emptyList())
 

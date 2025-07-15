@@ -1,13 +1,11 @@
 package com.standex.mealzapp.data.repository
 
-import com.google.gson.annotations.SerializedName
+import com.standex.mealzapp.data.api.MealsWebService
+import com.standex.mealzapp.data.model.MealsCategoriesResponse
 
-// should be the same name as the json key in the response
-data class MealsCategoriesResponse(val categories: List<Meal>)
-
-data class Meal(
-    @SerializedName("idCategory") val id: String,
-    @SerializedName("strCategory") val name: String,
-    @SerializedName("strCategoryDescription") val description: String,
-    @SerializedName("strCategoryThumb") val imageUrl: String
-)
+// Data Logic
+class MealsRepository(private val webService: MealsWebService = MealsWebService()) {
+    suspend fun getMeals(): MealsCategoriesResponse {
+        return webService.getMeals()
+    }
+}
