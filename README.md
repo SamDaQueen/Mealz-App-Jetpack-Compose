@@ -1,0 +1,1 @@
+Created and modified based on the tutorial for Jetpack Compose : https://www.udemy.com/course/jetpack-compose-masterclass
